@@ -1,16 +1,16 @@
 # PLaaS
 Plotting as a Service (PLaaS)
 
-# How to build
+## How to build
 docker build -t plaas haisamido/plaas
 
-# How to run
+## How to run
 docker run -d -p 2222:22 plaas
 
-# How to plot
+## How to plot
 ssh -t root@localhost -p 2222 "/usr/bin/gnuplot -p -e 'set terminal dumb;plot sin(x)'"
 
-# Should return
+### Should return
     1 +--------------------------------------------------------------------+
       |                *  *              +  *  **         +       *  *     |
   0.8 |-+             *   *                 *    *          sin(x* *******-|
