@@ -1,7 +1,7 @@
 FROM alpine:latest
 MAINTAINER Haisam Ido "haisam.ido@gmail.com"
 
-# https://hub.docker.com/r/haisamido/gnuplot/
+# https://hub.docker.com/r/haisamido/plaas/
 
 # Gets the latest available gnuplot
 RUN apk add gnuplot
