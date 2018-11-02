@@ -7,7 +7,7 @@ Plotting as a Service (PLaaS)
 ## How to run
 ```docker run -d -p 2222:22 haisamido/plaas```
 
-## How to plot
+## How to plot (the password is the string root [this is not secure])
 ```ssh \
 -o GlobalKnownHostsFile=/dev/null \
 -o UserKnownHostsFile=/dev/null \
