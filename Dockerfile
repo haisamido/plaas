@@ -10,7 +10,7 @@ RUN apk add gnuplot
 RUN apk add poppler-utils
 
 #------------------------------------------------------------------------------
-# Inspired by https://github.com/rjocoleman/docker-alpine-s3fs/blob/master/Dockerfile 
+# Copied https://github.com/rjocoleman/docker-alpine-s3fs/blob/master/Dockerfile 
 #  Thank you!
 #------------------------------------------------------------------------------
 RUN apk --update add fuse alpine-sdk automake autoconf libxml2-dev fuse-dev curl-dev git bash;
