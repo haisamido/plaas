@@ -8,7 +8,11 @@ Plotting as a Service (PLaaS)
 ```docker run -d -p 2222:22 haisamido/plaas```
 
 ## How to plot
-```ssh -t root@localhost -p 2222 "/usr/bin/gnuplot -p -e 'set terminal dumb;plot sin(x)'"```
+```ssh \
+-o GlobalKnownHostsFile=/dev/null \
+-o UserKnownHostsFile=/dev/null \
+-t root@localhost \
+-p 2222 "/usr/bin/gnuplot -p -e 'set terminal dumb;plot sin(x)'"```
 
 #### Should return
 ```
