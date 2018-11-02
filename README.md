@@ -12,7 +12,9 @@ Plotting as a Service (PLaaS)
 ssh -o GlobalKnownHostsFile=/dev/null \
 -o UserKnownHostsFile=/dev/null \
 -t root@localhost \
--p 2222 "/usr/bin/gnuplot -p -e 'set terminal dumb;plot sin(x)'"```
+-p 2222 \
+"/usr/bin/gnuplot -p -e 'set terminal dumb;plot sin(x)'"
+```
 
 #### Should return
 ```
