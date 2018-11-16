@@ -2,6 +2,8 @@ FROM alpine:latest
 MAINTAINER Haisam Ido "haisam.ido@gmail.com"
 
 # https://hub.docker.com/r/haisamido/plaas/
+# Instructions on how to build, run and execute can be found here
+# https://github.com/haisamido/plaas/blob/master/README.md
 
 # Gets the latest available gnuplot
 RUN apk add gnuplot
@@ -28,8 +30,6 @@ RUN git clone https://github.com/s3fs-fuse/s3fs-fuse.git; \
 # Copied from https://github.com/arvindr226/alpine-ssh 
 #  Thank you!
 #------------------------------------------------------------------------------
-# docker run -d -p 2222:22 gnuplot_s3
-# ssh -t root@localhost -p 2222 "/usr/bin/gnuplot"
 
 RUN apk --update add --no-cache openssh bash \
   && sed -i s/#PermitRootLogin.*/PermitRootLogin\ yes/ /etc/ssh/sshd_config \
@@ -43,6 +43,11 @@ RUN sed -ir 's/#HostKey \/etc\/ssh\/ssh_host_ecdsa_key/HostKey \/etc\/ssh\/ssh_h
 RUN sed -ir 's/#HostKey \/etc\/ssh\/ssh_host_ed25519_key/HostKey \/etc\/ssh\/ssh_host_ed25519_key/g' /etc/ssh/sshd_config
 RUN /usr/bin/ssh-keygen -A
 RUN ssh-keygen -t rsa -b 4096 -f  /etc/ssh/ssh_host_key
+
+RUN adduser -D -u 10000 gnuplot
+
+#USER gnuplot
+#WORKDIR /home/gnuplot
 
 EXPOSE 22
 CMD ["/usr/sbin/sshd","-D"]
