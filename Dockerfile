@@ -44,7 +44,8 @@ RUN sed -ir 's/#HostKey \/etc\/ssh\/ssh_host_ed25519_key/HostKey \/etc\/ssh\/ssh
 RUN /usr/bin/ssh-keygen -A
 RUN ssh-keygen -t rsa -b 4096 -f  /etc/ssh/ssh_host_key
 
-RUN adduser -D -u 10000 gnuplot
+RUN addgroup -g 10000 gnuplot
+RUN adduser -D -u 10000 -G gnuplot gnuplot
 
 #USER gnuplot
 #WORKDIR /home/gnuplot
